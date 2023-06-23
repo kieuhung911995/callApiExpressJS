@@ -39,6 +39,7 @@ const showDataFile = (req, res, next) => {
       result = newData;
     }
     res.status(200).send(result);
+    next();
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
