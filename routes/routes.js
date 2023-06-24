@@ -91,6 +91,6 @@ router.post("/5-9", takeSumOfKey);
 router.post("/5-10", upload.single("template"), showDataFile);
 router.post("/postfix", postfix);
 router.post("/calculatePostfix", calculatePostfix);
-router.get("/analyst", analyst);
+router.post("/analyst", upload.single("BangCong"), analyst);
 
 module.exports = router;

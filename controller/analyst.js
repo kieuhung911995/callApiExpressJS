@@ -2,9 +2,11 @@ const analyst = (req, res) => {
   try {
     const fs = require("fs");
     const ExcelJS = require("exceljs");
+    let file = req.file;
+    let filePath = file.path;
     //--------get worksheet
     const workbook = new ExcelJS.Workbook();
-    workbook.xlsx.readFile("documents/BangCong.xlsx").then(() => {
+    workbook.xlsx.readFile(filePath).then(() => {
       const worksheet = workbook.getWorksheet("Chấm công");
       //--------function return array of charater excel column
       function excelColumns(end) {
